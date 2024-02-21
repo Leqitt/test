@@ -1,16 +1,374 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You animation Using HTML and CSS</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
- <canvas id="canvas" width="1400" height="600">
-</canvas>
-<!-- js here -->
-    <script src="app.js"></script>
-</body>
-</html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href='http://fonts.googleapis.com/css?family=Lovers+Quarrel' rel='stylesheet' type='text/css'>
+    <title>I Love You</title>
+    <style>
+    body{
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: #111111;
+    }
+    #holder{
+        height:0px;
+        width: 0px;
+        position: absolute;
+        left: 50%;
+        margin-left: -150px;
+    }
+    #heart_holder{
+        height:0px;
+        width: 0px;
+        position: absolute;
+        top: 270px;
+    }
+    #y_holder{
+        height:0px;
+        width: 0px;
+        position: absolute;
+        top: 740px;
+        left: 10px;
+    
+    }
+    #U_holder{
+        height:0px;
+        width: 0px;
+        top: 407px;
+        position: absolute;
+        left: 250px;
+    }
+    #you_holder{
+        height:0px;
+        width: 0px;
+        position: absolute;
+        top: 80px;
+        left: -50px;
+    }
+    #names_box{
+        background-color: gray;
+        height: 160px;
+        width: 630px;
+        border-radius: 170px 170px 170px 170px;
+        box-shadow:inset 0 0 20px #000000;
+        left:-165px;
+        top:-605px;
+        position: relative;
+        opacity:0;
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -o-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+    }
+    #heart_holder:hover #names_box{
+        opacity:1;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    #name{
+        position: absolute;
+        color: black;
+        font-family: 'Lovers Quarrel', cursive;
+        font-size:120px;
+        text-align: center;
+        margin-top:20px;
+        margin-left:35px;
+    }
+    #I{
+        position: relative;
+        background-color:#9CD27B;
+        height: 250px;
+        width: 50px;
+        margin-left: 128px;
+    }
+    #left_heart{
+        position: relative;
+        top:0;
+        left:0;
+        background-color: red;
+        height: 350px;
+        width: 200px;
+        -webkit-border-top-left-radius: 100px;
+        -webkit-border-top-right-radius: 100px;
+        -moz-border-radius-topleft: 100px;
+        -moz-border-radius-topright: 100px;
+        -o-border-radius-topleft: 100px;
+        -o-border-radius-topright: 100px;
+        -ms-border-radius-topleft: 100px;
+        -ms-border-radius-topright: 100px;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        -webkit-transform:rotate(-46deg);
+        -moz-transform:rotate(-46deg);
+        -o-transform:rotate(-46deg);
+        -ms-transform:rotate(-46deg);
+        transform:rotate(-46deg);
+        -webkit-animation-name: Herz;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+        -moz-animation-name: Herz;
+        -moz-animation-duration: 3s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: ease-in-out;
+        -ms-animation-name: Herz;
+        -ms-animation-duration: 3s;
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-timing-function: ease-in-out;
+        animation-name: Herz;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+    }
+    #right_heart{
+        position: relative;
+        top: -350px;
+        left: 112px;
+        background-color: red;
+        height: 350px;
+        width: 200px;
+        -webkit-border-top-left-radius: 100px;
+        -webkit-border-top-right-radius: 100px;
+        -moz-border-radius-topleft: 100px;
+        -moz-border-radius-topright: 100px;
+        -o-border-radius-topleft: 100px;
+        -o-border-radius-topright: 100px;
+        -ms-border-radius-topleft: 100px;
+        -ms-border-radius-topright: 100px;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        -webkit-transform:rotate(46deg);
+        -moz-transform:rotate(46deg);
+        -o-transform:rotate(46deg);
+        -ms-transform:rotate(46deg);
+        transform:rotate(46deg);
+        -webkit-animation-name: Herz;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+        -moz-animation-name: Herz;
+        -moz-animation-duration: 3s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: ease-in-out;
+        -ms-animation-name: Herz;
+        -ms-animation-duration: 3s;
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-timing-function: ease-in-out;
+        animation-name: Herz;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+    }
+    #heart_holder:hover #left_heart{
+        left: -112px;
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    }
+    #heart_holder:hover #right_heart{
+        left: 212px;
+        -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    }
+    #y1{
+        position: absolute;
+        top: 0;
+        background-color:#9CD27B;
+        height: 200px;
+        width: 50px;
+    }
+    #y2{
+        position: absolute;
+        top: -167px;
+        background-color:#9CD27B;
+        height: 200px;
+        width: 50px;
+        margin-left: 54px;
+        -webkit-transform:rotate(36deg);
+        -moz-transform:rotate(36deg);
+        -o-transform:rotate(36deg);
+        -ms-transform:rotate(36deg);
+        transform:rotate(36deg);
+        -webkit-border-bottom-left-radius: 40px;
+        -moz-border-radius-bottomleft: 40px;
+        -ms-border-radius-bottomleft: 40px;
+        border-bottom-left-radius: 40px;
+    }
+    #y3{
+        position: absolute;
+        top: -167px;
+        background-color:#9CD27B;
+        height: 200px;
+        width: 50px;
+        margin-left: -54px;
+        -webkit-transform:rotate(-36deg);
+        -moz-transform:rotate(-36deg);
+        -o-transform:rotate(-36deg);
+        -ms-transform:rotate(-36deg);
+        transform:rotate(-36deg);
+        -webkit-border-bottom-right-radius: 20px;
+        -moz-border-radius-bottomright: 20px;
+        -o-border-radius-bottomright: 20px;
+        -ms-border-radius-bottomright: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    #O{
+        position: absolute;
+        top: 760px;
+        border-color:#9CD27B;
+        border-style:solid;
+        border-width: 40px;
+        height: 100px;
+        width: 100px;
+        left: 20px;
+        margin-left: 64px;
+        -webkit-border: 140px 190px 140px;
+        -moz-border-radius: 140px 190px 140px;
+        -o-border-radius: 140px 190px 140px;
+        -ms-border-radius: 140px 190px 140px;
+        border-radius: 140px 190px 140px;
+        -webkit-transform:rotate(45deg);
+        -moz-transform:rotate(45deg);
+        -o-transform:rotate(45deg);
+        -ms-transform:rotate(45deg);
+        transform:rotate(45deg);
+        
+    }
+    #U1{
+        position: absolute;
+        left: 37px;
+        top: 340px;
+        background-color:#9CD27B;
+        height: 170px;
+        width: 50px;
+        -webkit-border: 0px 0px 0px 34px;
+        -moz-border-radius: 0px 0px 0px 34px;
+        -o-border-radius: 0px 0px 0px 34px;
+        -ms-border-radius: 0px 0px 0px 34px;
+        border-radius: 0px 0px 0px 37px;
+    }
+    #U2{
+        position: absolute;
+        left: 147px;
+        top: 340px;
+        background-color:#9CD27B;
+        height: 170px;
+        width: 50px;
+        -webkit-border: 0px 0px 46px 0px;
+        -moz-border-radius: 0px 0px 46px 0px;
+        -o-border-radius: 0px 0px 46px 0px;
+        -ms-border-radius: 0px 0px 46px 0px;
+        border-radius: 0px 0px 46px 0px;
+    }
+    #U3{
+        position: absolute;
+        top: 393px;
+        border-color:#9CD27B;
+        border-style:solid;
+        border-width: 0px 0px 0px 50px;
+        height: 160PX;
+        width: 100px;
+        left: -22px;
+        margin-left: 64px;
+        -webkit-border: 20px 20px 20px 40px;
+        -moz-border-radius: 160px 120px 120px;
+        -o-border-radius: 160px 120px 120px;
+        -ms-border-radius: 160px 120px 120px;
+        border-radius: 170px 0px 00px 190px;
+        -webkit-transform:rotate(270deg);
+        -moz-transform:rotate(270deg);
+        -o-transform:rotate(270deg);
+        -ms-transform:rotate(270deg);
+        transform:rotate(270deg);
+    }
+    @-webkit-keyframes Herz{
+           0% {
+             background-color: #4B0000;
+             color: #4B0000;
+           }
+            50% {
+             background-color: #FF0000;
+              color: #FF0000;
+           }
+           100% {
+            background-color: #4B0000;
+             color: #4B0000;
+           }
+          }
+    @-moz-keyframes Herz{
+           0% {
+             background-color: #4B0000;
+             color: #4B0000;
+           }
+            50% {
+             background-color: #FF0000;
+              color: #FF0000;
+           }
+           100% {
+            background-color: #4B0000;
+             color: #4B0000;
+           }
+          }
+    @keyframes Herz{
+           0% {
+             background-color: #4B0000;
+             color: #4B0000;
+           }
+            50% {
+             background-color: #FF0000;
+              color: #FF0000;
+           }
+           100% {
+            background-color: #4B0000;
+             color: #4B0000;
+           }
+          }
+    </style>
+    </head>
+    <body>
+    <div id="holder">
+    <div id="I"></div>
+    <div id="heart_holder">
+    <div id="left_heart"></div>
+    <div id="right_heart"></div>
+    <div id="names_box"><div id="name">A Persons Name</div></div>
+    </div>
+    <div id="you_holder">
+    <div id="y_holder">
+    <div id="y1"></div>
+    <div id="y2"></div>
+    <div id="y3"></div>
+    </div>
+    <div id="O"></div>
+    <div id="U_holder">
+    <div id="U1"></div>
+    <div id="U2"></div>
+    <div id="U3"></div>
+    </div>
+    </div>
+    </body>
